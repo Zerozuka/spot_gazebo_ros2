@@ -1,4 +1,5 @@
 import os
+import sys
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
@@ -15,7 +16,7 @@ def generate_launch_description():
     world_file_arg = DeclareLaunchArgument(
         'world_file',
         default_value='simple_tunnel.sdf',
-        description='Name of the world file to load'
+        description='Bundled world filename or absolute SDF path'
     )
 
     rviz_arg = DeclareLaunchArgument(
@@ -38,6 +39,7 @@ def generate_launch_description():
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
             launch_arguments={
                 'gz_args': [
+                    '-r ',
                     PathJoinSubstitution([
                         pkg_spot_gazebo, 
                         'worlds',
@@ -62,8 +64,9 @@ def generate_launch_description():
 
     # Takes the description and joint angles as inputs and publishes the 3D poses of the robot links
     pkg_spot_description = get_package_share_directory('spot_description')
-    sdf_file = os.path.join(pkg_spot_description, 'models', 'spot', 'model.sdf')
-    with open(sdf_file, 'r') as infp: robot_desc = infp.read()
+    urdf_file = os.path.join(pkg_spot_description, 'models', 'spot', 'model.urdf')
+    with open(urdf_file, 'r') as infp:
+        robot_desc = infp.read()
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -148,6 +151,7 @@ def generate_launch_description():
     thermal_to_rgb = Node(
         package='spot_bringup',
         executable='thermal_to_rgb',
+        prefix=[sys.executable],
         name='thermal_to_rgb',
         output='screen',
         parameters=[{'use_sim_time': True}]

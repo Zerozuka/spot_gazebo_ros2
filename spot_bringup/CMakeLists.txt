@@ -11,12 +11,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
-find_package(PCL REQUIRED)
-find_package(pcl_conversions REQUIRED)
 
-include_directories(${PCL_INCLUDE_DIRS})
-link_directories(${PCL_LIBRARY_DIRS})
-add_definitions(${PCL_DEFINITIONS})
 
 add_executable(pointcloud_transform src/pointcloud_transform.cpp)
 ament_target_dependencies(pointcloud_transform

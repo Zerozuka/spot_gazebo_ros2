@@ -10,24 +10,24 @@
     </physics>
 
     <plugin
-        filename="ignition-gazebo-physics-system"
-        name="ignition::gazebo::systems::Physics">
+        filename="gz-sim-physics-system"
+        name="gz::sim::systems::Physics">
     </plugin>
 
     <plugin
-        filename="ignition-gazebo-sensors-system"
-        name="ignition::gazebo::systems::Sensors">
+        filename="gz-sim-sensors-system"
+        name="gz::sim::systems::Sensors">
         <render_engine>ogre2</render_engine>
     </plugin>
 
     <plugin
-        filename="ignition-gazebo-scene-broadcaster-system"
-        name="ignition::gazebo::systems::SceneBroadcaster">
+        filename="gz-sim-scene-broadcaster-system"
+        name="gz::sim::systems::SceneBroadcaster">
     </plugin>
 
     <plugin
-        filename="ignition-gazebo-user-commands-system"
-        name="ignition::gazebo::systems::UserCommands">
+        filename="gz-sim-user-commands-system"
+        name="gz::sim::systems::UserCommands">
     </plugin>
 
     <!--Ground Plane-->
