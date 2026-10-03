@@ -1,0 +1,41 @@
+{
+  "start": {
+    "t": 39.8,
+    "x": 4.214614548933793,
+    "y": -4.004746159459858,
+    "z": 0.481080766000107,
+    "roll": -0.005067303798792919,
+    "pitch": 0.00883733348238932
+  },
+  "end": {
+    "t": 46.7,
+    "x": 5.403823734509762,
+    "y": -4.021146165329749,
+    "z": 0.4790244138585614,
+    "roll": -0.003947952505151618,
+    "pitch": 0.008933172861967192
+  },
+  "displacement_m": 1.1893222638338161,
+  "command_speed_mps": 0.25,
+  "command_duration_sim_s": 6.0,
+  "message_counts": {
+    "joint_states": 1385,
+    "imu": 695,
+    "pointcloud": 63,
+    "thermal_rgb": 213,
+    "odometry": 69
+  },
+  "max_abs_roll_rad": 0.021605143514270668,
+  "max_abs_pitch_rad": 0.0169167289353453,
+  "thermal_encoding": "bgr8",
+  "pointcloud_frame": "base_link",
+  "pointcloud_fields": [
+    "x",
+    "y",
+    "z",
+    "intensity",
+    "ring",
+    "time"
+  ],
+  "passed": true
+}

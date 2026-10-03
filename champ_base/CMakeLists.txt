@@ -13,6 +13,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(tf2 REQUIRED)
 find_package(urdf REQUIRED)
 find_package(champ REQUIRED)
 find_package(message_filters REQUIRED)
@@ -28,6 +29,7 @@ set(dependencies
   trajectory_msgs
   nav_msgs
   tf2_ros
+  tf2
   urdf
   message_filters
   champ

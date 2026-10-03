@@ -33,3 +33,10 @@ log
 *.exe
 *.out
 *.app
+
+# Local ROS workspace and downloaded development dependencies
+/build/
+/install/
+/.ros-deps/
+/.cache/
+__pycache__/
